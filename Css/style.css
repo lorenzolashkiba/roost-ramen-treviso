@@ -757,6 +757,132 @@ ul {
 }
 
 /* =========================================
+   CTA BUTTONS
+   ========================================= */
+.btn-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: var(--rosso);
+    color: var(--bianco);
+    border: 3px solid var(--nero);
+    border-radius: 50px;
+    padding: 1rem 2rem;
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 var(--nero);
+    transition: all 0.3s var(--ease-bounce);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-cta:hover::before {
+    left: 100%;
+}
+
+.btn-cta:hover {
+    transform: translateY(-4px);
+    box-shadow: 6px 8px 0 var(--nero);
+    background: var(--rosso-scuro);
+}
+
+.btn-cta:active {
+    transform: translateY(-2px);
+    box-shadow: 3px 4px 0 var(--nero);
+}
+
+.btn-text {
+    font-weight: 700;
+}
+
+.btn-icon {
+    font-size: 1.3rem;
+    transition: transform 0.3s var(--ease-bounce);
+}
+
+.btn-cta:hover .btn-icon {
+    transform: translateX(3px) scale(1.1);
+}
+
+/* Hero CTA */
+.hero-cta {
+    margin-top: var(--space-md);
+    animation: ctaPulse 2s ease-in-out infinite;
+}
+
+@keyframes ctaPulse {
+    0%, 100% {
+        box-shadow: 4px 4px 0 var(--nero), 0 0 0 0 rgba(230, 57, 70, 0.4);
+    }
+    50% {
+        box-shadow: 4px 4px 0 var(--nero), 0 0 0 10px rgba(230, 57, 70, 0);
+    }
+}
+
+.hero-cta:hover {
+    animation: none;
+}
+
+/* About CTA */
+.about-cta {
+    margin-top: var(--space-md);
+    background: var(--bianco);
+    color: var(--rosso);
+    border-color: var(--rosso);
+    box-shadow: 4px 4px 0 var(--rosso);
+}
+
+.about-cta:hover {
+    background: var(--rosso);
+    color: var(--bianco);
+    box-shadow: 6px 8px 0 var(--rosso-scuro);
+}
+
+/* Parallax CTA */
+.parallax-cta {
+    margin-top: var(--space-md);
+    background: transparent;
+    border-color: var(--bianco);
+    color: var(--bianco);
+    box-shadow: 4px 4px 0 rgba(255,255,255,0.3);
+}
+
+.parallax-cta:hover {
+    background: var(--bianco);
+    color: var(--rosso);
+    box-shadow: 6px 8px 0 rgba(255,255,255,0.5);
+}
+
+/* Responsive CTA */
+@media (max-width: 768px) {
+    .btn-cta {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .btn-icon {
+        font-size: 1.1rem;
+    }
+
+    .hero-cta {
+        margin-top: var(--space-sm);
+    }
+}
+
+/* =========================================
    FLOATING ACTION BUTTONS
    ========================================= */
 
