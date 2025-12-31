@@ -216,6 +216,35 @@
         </div>
     </footer>
 
+    <!-- Floating Action Buttons -->
+    <div class="floating-btns">
+        <a href="tel:+390422000000" class="floating-btn phone-btn" aria-label="Chiama">
+            <span class="floating-btn-icon">📞</span>
+            <span class="floating-btn-text">Chiama</span>
+        </a>
+        <button class="floating-btn menu-btn" id="qrFloatingBtn" aria-label="Apri Menu QR">
+            <span class="floating-btn-icon">📱</span>
+            <span class="floating-btn-text">Menu</span>
+        </button>
+    </div>
+
+    <!-- QR Code Modal -->
+    <div class="qr-modal" id="qrModal">
+        <div class="qr-modal-overlay"></div>
+        <div class="qr-modal-content">
+            <button class="qr-modal-close" id="qrModalClose" aria-label="Chiudi">&times;</button>
+            <div class="qr-modal-header">
+                <span class="qr-modal-icon">📱</span>
+                <h3>Menu QR Code</h3>
+                <p class="qr-modal-subtitle">Scansiona per il Menu Mobile</p>
+            </div>
+            <div class="qr-modal-image">
+                <img src="assets/images/qr-code (4).png" alt="QR Code Menu">
+            </div>
+            <p class="qr-modal-instruction">Inquadra il QR code con la fotocamera del tuo smartphone</p>
+        </div>
+    </div>
+
     <script src="js/main.js"></script>
 </body>
 </html>

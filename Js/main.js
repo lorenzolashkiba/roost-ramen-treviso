@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initLightbox();
     initSmoothScroll();
     initParallaxDecorations();
+    initQRModal();
 });
 
 /* =========================================
@@ -469,5 +470,39 @@ function initCursorTrail() {
     animateTrail();
 }
 */
+
+/* =========================================
+   QR CODE MODAL
+   ========================================= */
+function initQRModal() {
+    const qrBtn = document.getElementById('qrFloatingBtn');
+    const qrModal = document.getElementById('qrModal');
+    const qrModalClose = document.getElementById('qrModalClose');
+    const qrModalOverlay = qrModal?.querySelector('.qr-modal-overlay');
+
+    if (!qrBtn || !qrModal) return;
+
+    // Open modal
+    qrBtn.addEventListener('click', () => {
+        qrModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+
+    // Close modal
+    function closeQRModal() {
+        qrModal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    qrModalClose?.addEventListener('click', closeQRModal);
+    qrModalOverlay?.addEventListener('click', closeQRModal);
+
+    // Close with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && qrModal.classList.contains('active')) {
+            closeQRModal();
+        }
+    });
+}
 
 console.log('🍜 Roost Ramen - Website loaded successfully!');
